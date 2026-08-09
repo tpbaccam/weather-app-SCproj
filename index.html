@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
       <link rel="stylesheet" href="src/style.css" />
+      <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <title>SC Weather App Project</title>
   </head>
 
@@ -17,12 +18,12 @@
     <div class="weather-app">
 
     <header>
-      <form class ="search-form">
+      <form class ="search-form" id="search-form">
         <input 
         type="search" 
         placeholder="Enter a city.." 
         required 
-        class="search-form-input"
+        class="search-form-input" id="search-form-input"
         />
         <input type="submit" value="Search" class="search-form-button" />
       </form>
@@ -30,18 +31,28 @@
 
     <main>
       <div>
-        <h1>Paris</h1>
-        <p>
-          Tuesday 14:49, scattered clouds
-          <br />
-          Humidity: 66%, Wind: 3.13km/h
+         <div class="weather-data"></div>
+        <h1 class="weather-app-city" id="city">Paris</h1>
+       
+        <p class = "weather-details-container">
+          <span id= "time">Tuesday 14:49</span>"," 
+          <span id="description">scattered clouds</span>
+          <br>
+          "Humidity: "<strong id="humidity">66%></strong>", 
+          Wind: "<strong id="wind-speed">3.13km/h</strong>
         </p>
       </div>
-      <div>🌤️ 12°C</div>
+      <div class = "current-temperature-details-container">
+        <div id="icon">
+        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" class="weather-app-icon">
+        </div>
+      <div class ="current-temperature" id="temperature">12°</div>
+      <div class ="temperature-unit">C</div>
+      </div>
+      </div>
     </main>
-  </body>
     <footer>
-      Coded by
+      This was a project coded by
       <a href="https://github.com/tpbaccam" target="_blank"> Tristine Baccam </a
       >, code hosted on
       <a href="https://github.com/tpbaccam/weather-app-SCproj" target="_blank"
@@ -49,9 +60,9 @@
       >
       and website hosted
       <a href="https://tbaccam-weather.netlify.app/" target="_blank"
-        >on Netlify</a
-      >
+        >on Netlify</a>
     </footer>
-
-  <script> </script>
+  </div>
+  <script src="src/index.js"></script>
+  </body>
 </html>
